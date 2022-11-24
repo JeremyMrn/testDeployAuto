@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Use npm 8.1.2
+        with:
+          npm-version: 8.1.2
       - run: npm ci
       - run: npm run build --if-present
       - name: set up JDK 1.8
