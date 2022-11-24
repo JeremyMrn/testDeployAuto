@@ -17,3 +17,6 @@ jobs:
       - run: gradle init
       - name: Build
         run: ./gradlew build
+      - name: Assemble Release Bundle
+        run: |
+          ./gradlew bundleRelease
