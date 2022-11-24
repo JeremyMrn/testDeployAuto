@@ -29,6 +29,6 @@ jobs:
           java-version: 11
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-      - run: gradle wrapper
+      - run: dos2unix gradlew
       - name: Execute Gradle build
         run: ./gradlew build
