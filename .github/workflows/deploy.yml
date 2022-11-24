@@ -19,5 +19,6 @@ jobs:
         run: ./gradlew build
       - run: gradle wrapper
       - run: ./gradlew tasks --all
-      - name: Assemble Release Bundle
-        run: ./gradlew bundleRelease
+      - name: Generate the Android App Bundle
+        working-directory: ./platforms/android/
+        run: ./gradlew bundle
