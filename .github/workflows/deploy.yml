@@ -18,6 +18,6 @@ jobs:
       - name: Build
         run: ./gradlew build
       - run: gradle wrapper
-      - run: ./gradlew tasks
+      - run: ./gradlew tasks --all
       - name: Assemble Release Bundle
         run: ./gradlew bundleRelease
