@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Use oxr463/setup-cordova
-        uses: oxr463/setup-cordova@0.0.3
+      - run: npm install -g cordova
       - run: npm ci
       - run: npm run app far
