@@ -21,5 +21,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Use oxr463/setup-cordova
+        uses: oxr463/setup-cordova@0.0.3
+        with:
+           exec: |
+                              cordova platform add android && \
+                              cordova build --no-telemetry && \
+                              cp "$(find . -name '*.apk')" .
       - run: npm ci
       - run: npm run app far
