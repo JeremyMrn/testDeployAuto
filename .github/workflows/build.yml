@@ -33,3 +33,11 @@ jobs:
       - run: gradle wrapper
       - name: Execute Gradle build
         run: ./gradlew build
+
+  deploy:
+    runs-out: unbuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Assemble Release Bundle
+        run: |
+          ./gradlew bundleRelease
