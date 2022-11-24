@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "841594491922",
+    "project_id": "face-aux-risques",
+    "storage_bucket": "face-aux-risques.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841594491922:android:49a7e67bc0f45aa25974cb",
+        "android_client_info": {
+          "package_name": "com.esystemes.far"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841594491922-2gj7ea1n7pmjdp3qn68a5l0vf3pmpee0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD4P2X0CEzA36ZfjsDoc6deMWWYWp8Yjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841594491922-2gj7ea1n7pmjdp3qn68a5l0vf3pmpee0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "841594491922-d678vdcpbjtofhia5f0tom7rh1n07hak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.esystemes.far"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
