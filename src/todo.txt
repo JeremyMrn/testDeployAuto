@@ -1,0 +1,10 @@
+Importer:
+-vue-router
+-vuex
+-firebase
+-fontawesome
+-vue pdfjs
+
+- VUEJS : Revoir responsive des pages et différence avec la maquette
+- Diviser les vues en petits composants
+- Gestion du CSS et des couleurs
