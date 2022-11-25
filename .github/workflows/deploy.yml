@@ -18,6 +18,7 @@ jobs:
       - name: Build
         run: ./gradlew build
       - run: gradle wrapper
+      - run: gradle projects
       - run: ./gradlew tasks --all
       - name: Set execution flag for gradlew
         run: chmod +x gradlew
