@@ -22,6 +22,7 @@ jobs:
       - name: Set execution flag for gradlew
         run: chmod +x gradlew
       - run: ls
+      - run: cd gradlew && ls
       - name: Assemble Release Bundle
         run: |
           ./gradlew assembleDebug
