@@ -79,8 +79,8 @@ echo "build des plateformes"
 
 
 # Allow Android compilation
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+#export PATH=$JAVA_HOME/bin:$PATH
 
 cordova prepare android
 cordova build android --production --release
