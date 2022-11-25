@@ -20,6 +20,8 @@ jobs:
       - run: gradle wrapper
       - run: ./gradlew tasks --all
       - run: ls
+      - run: cd gradle
+      - run: ls
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
       - name: Upload APK
