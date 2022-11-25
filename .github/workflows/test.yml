@@ -20,6 +20,9 @@ jobs:
       - name: Init Gradle
         run: gradle init
 
+      - name: liste des files
+        run: ls
+
       - name: Build Project
         run: ./gradlew assemble
 
