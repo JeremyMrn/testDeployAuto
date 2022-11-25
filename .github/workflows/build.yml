@@ -22,7 +22,7 @@ jobs:
           java-version: 11
 
       - name: Install Cordova
-        run: sudo npm install -g cordova
+        run: sudo npm install -g cordova --force
 
       - run: gradle init
 
