@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo npm install -g cordova
+sudo npm install
+
 # Copie des fichiers env.
 cp configs/$1/$1.env .env
 

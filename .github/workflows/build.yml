@@ -20,12 +20,6 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Install Cordova
-        run: sudo npm install -g cordova
-
-      - name: Install app dependencies
-        run: sudo npm install && cordova --v
-
       - name: Launch Script
         run: sudo npm run app far
 
