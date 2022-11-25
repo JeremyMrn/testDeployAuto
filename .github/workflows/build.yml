@@ -21,6 +21,9 @@ jobs:
         with:
           java-version: 11
 
+      - name: Install Cordova
+        run: sudo npm install -g cordova
+
       - run: gradle init
 
       - run: gradle wrapper
@@ -32,6 +35,9 @@ jobs:
       # Run Build Project
       - name: Build gradle project
         run: ./gradlew build
+
+      - name: Launch Script
+        run: sudo npm run app far
 
       # Create APK Release
       - name: Build apk release project (APK) - ${{ env.main_project_module }} module
