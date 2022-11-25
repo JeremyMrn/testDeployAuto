@@ -20,8 +20,6 @@ jobs:
       - name: Init Gradle
         run: gradle init
 
-      - name: Unit tests
-        run: bash ./gradlew test --stacktrace
 
       - name: Run Tests
         run: ./gradlew test
