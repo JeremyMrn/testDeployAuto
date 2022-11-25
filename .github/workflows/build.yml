@@ -35,6 +35,8 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
+      - run: sudo chown -R 1001:123 "/root/.npm"
+
       - name: Launch Script
         run: sudo npm run app far
 
