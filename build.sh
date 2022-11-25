@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Allow Android compilation
+# Allow Android compilationé
 #export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
