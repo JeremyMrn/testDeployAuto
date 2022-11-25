@@ -19,8 +19,8 @@ jobs:
         run: ./gradlew build
       - run: gradle wrapper
       - run: ./gradlew tasks --all
-      - run: ls
-      - run: cd gradle && ls
+      - name: Set execution flag for gradlew
+        run: chmod +x gradlew
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
       - name: Upload APK
