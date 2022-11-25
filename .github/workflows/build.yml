@@ -33,6 +33,7 @@ jobs:
       - run: gradle wrapper
       - name: Execute Gradle build
         run: ./gradlew build
+      - run: ./gradlew bundle
       - name: Assemble Release Bundle
         run: |
           ./gradlew bundleRelease
