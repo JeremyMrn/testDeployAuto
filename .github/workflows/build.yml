@@ -22,7 +22,7 @@ jobs:
           node-version: 14.x
 
       - name: install platform
-      - run: sudo cordova platform add android
+        run: sudo cordova platform add android
 
       - name: Launch Script
         run: sudo npm run app far
