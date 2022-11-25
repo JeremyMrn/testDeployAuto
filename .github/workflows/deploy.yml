@@ -19,6 +19,7 @@ jobs:
         run: ./gradlew build
       - run: gradle wrapper
       - run: ./gradlew tasks --all
+      - run: gradle build
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
