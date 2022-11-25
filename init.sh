@@ -84,7 +84,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export PATH=$JAVA_HOME/bin:$PATH
 
 cordova prepare android
-#cordova build android --production --release
+cordova build android --production --release
 #cordova run android
 
 #cordova prepare ios
