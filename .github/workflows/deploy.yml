@@ -21,10 +21,10 @@ jobs:
       - run: ./gradlew tasks --all
       - name: Set execution flag for gradlew
         run: chmod +x gradlew
-      - run: cd
+      - run: ls
       - name: Assemble Release Bundle
         run: |
-          ./gradlew assembleDebug --debug
+          ./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
