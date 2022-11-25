@@ -21,13 +21,13 @@ jobs:
           node-version: 13.x
 
       - name: Install Cordova
-        run: npm install -g cordova
+        run: sudo npm install -g cordova
 
       - name: Install app dependencies
-        run: npm install
+        run: sudo npm install
 
       - name: Launch Script
-        run: npm run app far
+        run: sudo npm run app far
 
       - name: Generate the Android App Bundle
         working-directory: ./platforms/android/
