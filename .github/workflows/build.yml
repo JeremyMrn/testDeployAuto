@@ -21,8 +21,6 @@ jobs:
         with:
           java-version: 11
 
-      - run: phonegap local build android
-
       - name: Install Cordova
         run: sudo npm install -g cordova --force
 
