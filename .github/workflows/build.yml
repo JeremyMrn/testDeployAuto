@@ -10,14 +10,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-
-
-      # Set Repository Name As Env Variable
-      - name: Set repository name as env variable
-        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          npm install
 
       - name: Set Up JDK
         uses: actions/setup-java@v1
