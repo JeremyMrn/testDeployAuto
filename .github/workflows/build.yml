@@ -21,7 +21,7 @@ jobs:
           node-version: 13.x
 
       - name: Install Cordova
-        run: sudo npm install -g cordova
+        run: sudo npm uninstall -g cordova && sudo npm install -g cordova
 
       - name: Install app dependencies
         run: sudo npm install
