@@ -36,8 +36,6 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
-      - run: cordova platform add android
-
       - name: Launch Script
         run: sudo npm run app far
 
