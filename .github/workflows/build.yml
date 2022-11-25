@@ -11,35 +11,29 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      # Set Current Date As Env Variable
+      - name: Set current date as env variable
+        run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      # Set Repository Name As Env Variable
+      - name: Set repository name as env variable
+        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install app dependencies
-        run: sudo npm install
-
-      - run: sudo npm install -g cordova
-
-      - run: npm run app far
-
-      - uses: actions/setup-java@v3
-        with:
-          distribution: temurin
           java-version: 11
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
 
-      - run: gradle init
+      # Run Tests Build
+      - name: Run gradle tests
+        run: ./gradlew test
 
-      - run: gradle wrapper
-
-      - name: Execute Gradle build
+      # Run Build Project
+      - name: Build gradle project
         run: ./gradlew build
