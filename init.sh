@@ -53,8 +53,8 @@ echo "ajout des plateformes cordova"
 
 cordova platform add android@8.0.0
 cordova platform add android@8.0.0
-cordova platform add ios@6.1.0
-cordova platform add ios@6.1.0
+#cordova platform add ios@6.1.0
+#cordova platform add ios@6.1.0
 
 # On va recopier le contenue du fichier par défaut customConfigFile.xml dans le config.xml du projet cordova.
 echo $(cat ../../customConfigFile.xml) > config.xml
@@ -72,7 +72,7 @@ echo "commandes des ressources cordova"
 
 # Génération des îcones.
 cordova-res android
-cordova-res ios
+#cordova-res ios
 cordova-res
 
 echo "build des plateformes"
