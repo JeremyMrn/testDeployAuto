@@ -75,7 +75,7 @@ cordova-res android
 #cordova-res ios
 cordova-res
 
-echo "build des plateformes"
+echo "build des plateformess"
 
 
 # Allow Android compilation
