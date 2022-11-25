@@ -23,7 +23,7 @@ jobs:
         run: chmod +x gradlew
       - name: Assemble Release Bundle
         run: |
-          ./gradlew bundleRelease
+          ./gradlew bundleRelease --scan
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
