@@ -5,6 +5,8 @@
 # - id de l'app
 # - Nom de lapp.
 
+echo "Installation des plugins npm"
+
 # Dowload plugins.
 npm i cordova-plugin-splashscreen@5.0.4
 npm i cordova-plugin-androidx@2.0.0
@@ -22,6 +24,7 @@ npm i cordova-plugin-geolocation
 npm i cordova-plugin-inappbrowser
 npm i cordova-plugin-screen-orientation
 
+echo "Installation des plugins cordova"
 
 # AJout plugin pour notification.
 cordova plugin add cordova-plugin-androidx-adapter@1.1.1
@@ -40,9 +43,13 @@ cordova plugin add cordova-plugin-geolocation
 cordova plugin add cordova-plugin-inappbrowser
 cordova plugin add cordova-plugin-screen-orientation
 
+echo "remove des plateformes cordova"
+
 # Gestion des plateformes.
 cordova platform remove android
 cordova platform remove ios
+
+echo "ajout des plateformes cordova"
 
 cordova platform add android@8.0.0
 cordova platform add android@8.0.0
@@ -61,10 +68,15 @@ echo $(sed "s/VUE_APP_NAME_APP/${3}/g" config.xml) > config.xml
 # Enable build for IOS
 #sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
+echo "commandes des ressources cordova"
+
 # Génération des îcones.
 cordova-res android
 cordova-res ios
 cordova-res
+
+echo "build des plateformes"
+
 
 # Allow Android compilation
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
