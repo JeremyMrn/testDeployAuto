@@ -71,8 +71,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Hom
 export PATH=$JAVA_HOME/bin:$PATH
 
 cordova prepare android
-cordova build android
+cordova build android --production --release
 #cordova run android
 
-cordova prepare ios
+#cordova prepare ios
 #cordova build ios
