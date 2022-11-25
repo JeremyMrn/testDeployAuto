@@ -20,7 +20,7 @@ jobs:
       - run: gradle wrapper
       - run: ./gradlew tasks --all
       - name: Build APK
-        run: bash ./gradlew assembleDebug --stacktrace --rerun-tasks
+        run: cd android && ./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
