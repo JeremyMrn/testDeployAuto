@@ -27,14 +27,20 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Exportation des variables
-      - run: export JAVA_HOME=$(/usr/libexec/java_home)
-      - run: export PATH=$JAVA_HOME/bin:$PATH
-      - run: export ANDROID_HOME=/usr/local/lib/android/sdk
-      - run: export PATH=$ANDROID_HOME/tools/bin:$PATH
+      - name: Exportation de JAVA_HOME
+        run: export JAVA_HOME=$(/usr/libexec/java_home)
+
+      - name: Exportation de PATH
+        run: export PATH=$JAVA_HOME/bin:$PATH
+
+      - name: Exportation de ANDROID_HOME
+        run: export ANDROID_HOME=/usr/local/lib/android/sdk
+
+      - name: Exportation de PATH
+        run: export PATH=$ANDROID_HOME/tools/bin:$PATH
 
       - name: Suppression du cache de Gradle
-      - run: rm -rf ~/.gradle/caches && ./gradlew --stop
+        run: rm -rf ~/.gradle/caches && ./gradlew --stop
 
       - name: Launch compilation APP
         run: sudo npm run app far
