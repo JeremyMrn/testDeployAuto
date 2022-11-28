@@ -77,8 +77,11 @@ cordova-res
 
 echo "build des plateformess"
 
-
+$ source .bash_profile
+$ echo $JAVA_HOME
 # Allow Android compilation
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
 #export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
