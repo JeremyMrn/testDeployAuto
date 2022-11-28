@@ -90,9 +90,7 @@ echo "Export des variables Android"
 
 export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export ANDROID_SDK_ROOT=/Users/runner/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools
-
-
+export ANDROID_SDK_ROOT="/Users/$(whoami)/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools"
 
 echo $ANDROID_HOME
 echo $ANDROID_SDK_ROOT
