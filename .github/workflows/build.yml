@@ -20,9 +20,6 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Install Cordova
-        run: sudo npm install -g cordova --force
-
       - run: gradle init
 
       - run: gradle wrapper
@@ -34,6 +31,4 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
-      - name: Launch Script
-        run: sudo npm run app far
 
