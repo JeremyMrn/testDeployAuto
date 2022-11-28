@@ -7,7 +7,7 @@
 
 echo "Installation des plugins npm"
 
-# Dowload plugins.
+# Download plugins.
 npm i cordova-plugin-splashscreen@5.0.4
 npm i cordova-plugin-androidx@2.0.0
 npm i cordova-plugin-androidx-adapter@1.1.1
