@@ -109,7 +109,6 @@ cordova prepare android --stacktrace
 cordova requirements
 echo "build android"
 
-
 gradle -v
 
 cordova build android --scan

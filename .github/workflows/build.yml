@@ -11,15 +11,14 @@ jobs:
 
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Install npm dependencies
         run: npm install
 
       - name: Set Up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v1
         with:
-          distribution: temurin
-          java-version: 17.0.2+8
+          java-version: 1.8
           cache: gradle
 
       - name: Setup Gradle (Init)
@@ -31,26 +30,20 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Build SampleApplication
-        run: ./gradlew --no-daemon build
-
       - name: Exportation de JAVA_HOME
         run: export JAVA_HOME=$(/usr/libexec/java_home)
 
-      - name: Exportation de PATH
-        run: export PATH=$JAVA_HOME/bin:$PATH
-
-      - name: Exportation de ANDROID_HOME
-        run: export ANDROID_HOME=/usr/local/lib/android/sdk
-
-      - name: Exportation de PATH
-        run: export PATH=$ANDROID_HOME/tools/bin:$PATH
+      - name: Exportation de ANDROID_SDK_ROOT
+        run: export ANDROID_SDK_ROOT="/Users/$(whoami)/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools"
 
       - name: Suppression du cache de Gradle
         run: rm -rf ~/.gradle/caches
 
-      #- name: Exportation du Gradle Local pour Cordova
-      #  run: export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=https://services.gradle.org/distributions/gradle-7.5.1-all.zip
+      - run: ls /usr/local/lib/android/sdk
+      - run: ls /usr/local/lib/android/sdk/tools/
+
+      - name: Exportation du Gradle Local pour Cordova
+        run: export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=https://services.gradle.org/distributions/gradle-7.5.1-all.zip
 
       - name: Launch compilation APP
         run: sudo npm run app far
