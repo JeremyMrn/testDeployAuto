@@ -99,7 +99,7 @@ echo $ANDROID_SDK_ROOT
 echo "prepare android"
 
 cordova prepare android --stacktrace
-
+cordova requirements
 echo "build android"
 
 cordova build android --scan
