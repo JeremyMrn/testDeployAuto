@@ -10,6 +10,8 @@ jobs:
   diffusion:
     runs-on: macos-latest
     steps:
+
+    - run: ls
     - uses: r0adkll/sign-android-release@v1
       name: Sign app APK
       # ID used to access action output
