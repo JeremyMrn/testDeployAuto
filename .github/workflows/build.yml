@@ -52,6 +52,8 @@ jobs:
       - name: Build SampleApplication
         run: ./gradlew --no-daemon build
 
+      - run: ./gradlew clean
+
       - name: Launch Script
         run: sudo npm run app far
 
