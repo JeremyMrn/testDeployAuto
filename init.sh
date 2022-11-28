@@ -78,14 +78,12 @@ cordova-res
 echo "build des plateformess"
 
 # Allow Android compilation
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
 #export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
 
 cordova prepare android
-cordova build android --production --release
+cordova build android --production --release --stacktrace
 #cordova run android
 
 #cordova prepare ios

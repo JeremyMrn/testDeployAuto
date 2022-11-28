@@ -41,10 +41,14 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Build SampleApplication
+        run: ./gradlew --no-daemon build
+
       - name: Launch Script
         run: sudo npm run app far
-
-
 
       - name: Assemble Release Bundle
         run: |
