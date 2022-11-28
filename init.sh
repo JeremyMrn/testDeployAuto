@@ -94,7 +94,7 @@ echo "build android"
 
 gradle -v
 
-cordova build android --scan
+cordova build android --release --production
 #cordova run android
 
 #cordova prepare ios
