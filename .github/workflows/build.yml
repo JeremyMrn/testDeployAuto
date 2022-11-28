@@ -39,7 +39,7 @@ jobs:
 
 
       - run: cordova create hello com.example.hello HelloWorld
-      - run: cd HelloWorld
+      - run: cd hello
       - run: cordova platform add android
       - run: cordova prepare android
       - run: cordova build android
