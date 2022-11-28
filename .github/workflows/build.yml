@@ -30,6 +30,8 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
+      - run: ls /root/.android/sdk
+
       - name: Exportation de JAVA_HOME
         run: export JAVA_HOME=$(/usr/libexec/java_home)
 
