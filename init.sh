@@ -7,6 +7,11 @@
 
 echo "Installation des plugins npm"
 
+# ANDROID_HOME
+
+export ANDROID_HOME=/root/.android/sdk
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+
 # Download plugins.
 npm i cordova-plugin-splashscreen@5.0.4
 npm i cordova-plugin-androidx@2.0.0
