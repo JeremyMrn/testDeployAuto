@@ -52,7 +52,7 @@ jobs:
       - name: Build SampleApplication
         run: ./gradlew --no-daemon build
 
-      - run: ./gradlew clean
+      - run: rm -rf ~/.gradle/caches && ./gradlew --stop && ./gradlew cleanBuildCache && ./gradlew bundleRelease
 
       - name: Launch Script
         run: sudo npm run app far
