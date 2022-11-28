@@ -21,6 +21,9 @@ jobs:
           java-version: 1.8
           cache: gradle
 
+      - name: Setup Gradle (Init)
+        run: gradle init
+
       - name: Install Cordova
         run: sudo npm install -g cordova --force
 
