@@ -43,4 +43,4 @@ jobs:
 
       - name: Assemble Release Bundle
         run: |
-          ./gradlew bundleRelease --stacktrace
+          cd android && gradlew assembleRelease --stacktrace
