@@ -24,7 +24,13 @@ jobs:
 
       - run: gradle init
 
+      - run: export JAVA_HOME=$(/usr/libexec/java_home)
 
+      - run: export PATH=$JAVA_HOME/bin:$PATH
+
+      - run: source .bash_profile
+
+      - run: echo $JAVA_HOME
 
       - run: gradle wrapper
 
@@ -48,4 +54,4 @@ jobs:
 
       - name: Assemble Release Bundle
         run: |
-          cd android && gradlew assembleRelease --stacktrace
+          gradlew assembleRelease --stacktrace
