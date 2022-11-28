@@ -96,11 +96,16 @@ echo JAVA_HOME
 echo $ANDROID_HOME
 echo $ANDROID_SDK_ROOT
 
+gradle -v
+
 echo "prepare android"
 
 cordova prepare android --stacktrace
 cordova requirements
 echo "build android"
+
+
+gradle -v
 
 cordova build android --scan
 #cordova run android
