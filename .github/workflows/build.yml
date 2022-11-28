@@ -44,6 +44,10 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
+      - run: export ANDROID_HOME=/root/.android/sdk
+      - run: export PATH=$ANDROID_HOME/tools/bin:$PATH
+
+
       - name: Build SampleApplication
         run: ./gradlew --no-daemon build
 

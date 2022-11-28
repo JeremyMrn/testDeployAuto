@@ -75,7 +75,7 @@ cordova-res android
 #cordova-res ios
 cordova-res
 
-echo "build des plateformess"
+echo "build des plateformes"
 
 # Allow Android compilation
 #export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
