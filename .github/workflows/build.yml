@@ -32,7 +32,9 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Liste des tasks
-        run: gradle tasks
+        run: gradle tasks --all
+
+
 
       # Run Build Project
       - name: Build gradle project
@@ -41,4 +43,4 @@ jobs:
 
       - name: Assemble Release Bundle
         run: |
-          -- $ ./gradlew bundleRelease --stacktrace
+          ./gradlew bundleRelease --stacktrace
