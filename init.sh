@@ -100,7 +100,7 @@ cordova prepare android --stacktrace
 
 echo "build android"
 
-cordova build android --stacktrace
+cordova build android --debug
 #cordova run android
 
 #cordova prepare ios
