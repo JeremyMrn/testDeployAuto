@@ -96,11 +96,11 @@ echo $PATH
 
 echo "prepare android"
 
-cordova prepare android
+cordova prepare android --stacktrace
 
 echo "build android"
 
-cordova build android --production --release --stacktrace
+cordova build android --stacktrace
 #cordova run android
 
 #cordova prepare ios
