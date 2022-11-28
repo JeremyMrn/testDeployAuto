@@ -12,8 +12,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install npm dependencies
-        run: npm install
 
       - name: Set Up JDK
         uses: actions/setup-java@v1
@@ -39,11 +37,10 @@ jobs:
       - name: Suppression du cache de Gradle
         run: rm -rf ~/.gradle/caches
 
-      - run: ls /usr/local/lib/android/sdk
-      - run: ls /usr/local/lib/android/sdk/tools/
 
-      - name: Exportation du Gradle Local pour Cordova
-        run: export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=https://services.gradle.org/distributions/gradle-7.5.1-all.zip
+      - run: cordova create hello com.example.hello HelloWorld
+      - run: cd HelloWorld
+      - run: cordova platform add android
+      - run: cordova prepare android
+      - run: cordova build android
 
-      - name: Launch compilation APP
-        run: sudo npm run app far
