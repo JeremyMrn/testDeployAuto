@@ -86,6 +86,7 @@ echo "build des plateformes"
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
 ./gradlew
+./gradlew build
 
 cordova prepare android
 cordova build android --production --release --stacktrace
