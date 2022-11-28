@@ -85,10 +85,21 @@ echo "build des plateformes"
 #export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
-./gradlew
-./gradlew build
+
+echo "Export des variables Android"
+
+export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+echo $ANDROID_HOME
+echo $PATH
+
+echo "prepare android"
 
 cordova prepare android
+
+echo "build android"
+
 cordova build android --production --release --stacktrace
 #cordova run android
 
