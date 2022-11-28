@@ -21,34 +21,20 @@ jobs:
           java-version: 1.8
           cache: gradle
 
-
       - name: Install Cordova
         run: sudo npm install -g cordova --force
-
-      - run: gradle init
-
-      - run: export JAVA_HOME=$(/usr/libexec/java_home)
-
-      - run: export PATH=$JAVA_HOME/bin:$PATH
-
-      - run: echo $JAVA_HOME
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
+      - name: Exportation des variables
+      - run: export JAVA_HOME=$(/usr/libexec/java_home)
+      - run: export PATH=$JAVA_HOME/bin:$PATH
       - run: export ANDROID_HOME=/usr/local/lib/android/sdk
-      #- run: export ANDROID_HOME=/root/.android/sdk
       - run: export PATH=$ANDROID_HOME/tools/bin:$PATH
 
-      - name: Build SampleApplication
-        run: ./gradlew --no-daemon build
-
-
+      - name: Suppression du cache de Gradle
       - run: rm -rf ~/.gradle/caches && ./gradlew --stop
 
-      - name: Launch Script
+      - name: Launch compilation APP
         run: sudo npm run app far
-
-      - name: Assemble Release Bundle
-        run: |
-          gradlew assembleRelease --stacktrace

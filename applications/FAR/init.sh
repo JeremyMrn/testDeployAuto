@@ -82,17 +82,19 @@ cordova-res
 echo "build des plateformes"
 
 # Allow Android compilation
-#export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 #export PATH=$JAVA_HOME/bin:$PATH
 
 echo "Export des variables Android"
 
-export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+#export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#export ANDROID_SDK_ROOT="/Users/$(whoami)/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools"
 
+echo JAVA_HOME
 echo $ANDROID_HOME
-echo $PATH
+echo $ANDROID_SDK_ROOT
 
 echo "prepare android"
 
@@ -100,7 +102,7 @@ cordova prepare android --stacktrace
 
 echo "build android"
 
-cordova build android --debug
+cordova build android --scan
 #cordova run android
 
 #cordova prepare ios
