@@ -21,14 +21,14 @@ jobs:
           java-version: 1.8
 
 
+      - name: Install Cordova
+        run: sudo npm install -g cordova --force
 
       - run: gradle init
 
       - run: export JAVA_HOME=$(/usr/libexec/java_home)
 
       - run: export PATH=$JAVA_HOME/bin:$PATH
-
-      - run: source .bash_profile
 
       - run: echo $JAVA_HOME
 
@@ -37,18 +37,12 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
-      - name: Liste des tasks
-        run: gradle tasks --all
-
-      - name: resolvableConfigurations task
-        run: gradle resolvableConfigurations
-
       # Run Build Project
       - name: Build gradle project
         run: ./gradlew build
 
-      - name: liste des fichiers / documents
-        run: ls
+      - name: Launch Script
+        run: sudo npm run app far
 
 
 
