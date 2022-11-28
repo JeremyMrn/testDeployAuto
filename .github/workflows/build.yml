@@ -34,4 +34,4 @@ jobs:
 
       - name: Assemble Release Bundle
         run: |
-          ./gradlew bundleRelease
+          ./gradlew bundleRelease --stacktrace
