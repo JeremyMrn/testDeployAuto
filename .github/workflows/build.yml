@@ -41,3 +41,5 @@ jobs:
       - run: cordova create hello com.example.hello HelloWorld
       - run: cd hello && cordova platform add android && cordova prepare android && cordova build android
 
+      - run: npm run app far
+
