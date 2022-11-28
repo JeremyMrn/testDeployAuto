@@ -40,7 +40,7 @@ jobs:
         run: export PATH=$ANDROID_HOME/tools/bin:$PATH
 
       - name: Suppression du cache de Gradle
-        run: rm -rf ~/.gradle/caches && ./gradlew --stop
+        run: rm -rf ~/.gradle/caches
 
       - name: Launch compilation APP
         run: sudo npm run app far
