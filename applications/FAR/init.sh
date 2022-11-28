@@ -5,7 +5,13 @@
 # - id de l'app
 # - Nom de lapp.
 
-# Dowload plugins.
+echo "Installation des plugins npm"
+
+# ANDROID_HOME
+export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# Download plugins.
 npm i cordova-plugin-splashscreen@5.0.4
 npm i cordova-plugin-androidx@2.0.0
 npm i cordova-plugin-androidx-adapter@1.1.1
@@ -22,6 +28,7 @@ npm i cordova-plugin-geolocation
 npm i cordova-plugin-inappbrowser
 npm i cordova-plugin-screen-orientation
 
+echo "Installation des plugins cordova"
 
 # AJout plugin pour notification.
 cordova plugin add cordova-plugin-androidx-adapter@1.1.1
@@ -40,14 +47,18 @@ cordova plugin add cordova-plugin-geolocation
 cordova plugin add cordova-plugin-inappbrowser
 cordova plugin add cordova-plugin-screen-orientation
 
+echo "remove des plateformes cordova"
+
 # Gestion des plateformes.
 cordova platform remove android
 cordova platform remove ios
 
+echo "ajout des plateformes cordova"
+
 cordova platform add android@8.0.0
 cordova platform add android@8.0.0
-cordova platform add ios@6.1.0
-cordova platform add ios@6.1.0
+#cordova platform add ios@6.1.0
+#cordova platform add ios@6.1.0
 
 # On va recopier le contenue du fichier par défaut customConfigFile.xml dans le config.xml du projet cordova.
 echo $(cat ../../customConfigFile.xml) > config.xml
@@ -61,18 +72,38 @@ echo $(sed "s/VUE_APP_NAME_APP/${3}/g" config.xml) > config.xml
 # Enable build for IOS
 #sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
+echo "commandes des ressources cordova"
+
 # Génération des îcones.
 cordova-res android
-cordova-res ios
+#cordova-res ios
 cordova-res
 
-# Allow Android compilation
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
+echo "build des plateformes"
 
-cordova prepare android
-cordova build android
+# Allow Android compilation
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+#export PATH=$JAVA_HOME/bin:$PATH
+
+echo "Export des variables Android"
+
+#export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+#export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+#export ANDROID_SDK_ROOT="/Users/$(whoami)/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools"
+
+echo JAVA_HOME
+echo $ANDROID_HOME
+echo $ANDROID_SDK_ROOT
+
+echo "prepare android"
+
+cordova prepare android --stacktrace
+
+echo "build android"
+
+cordova build android --scan
 #cordova run android
 
-cordova prepare ios
+#cordova prepare ios
 #cordova build ios

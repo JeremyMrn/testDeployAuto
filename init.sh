@@ -90,17 +90,29 @@ echo "Export des variables Android"
 
 export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT="/Users/$(whoami)/Library/Android/sdk/cmdline-tools/7.0/bin/sdkmanager platform-tools"
 
+#export ANDROID_SDK_ROOT=/Development/android-sdk/
+#export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+#export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/
+#export PATH=$PATH:$ANDROID_SDK_ROOT/emulator/
+
+echo JAVA_HOME
 echo $ANDROID_HOME
-echo $PATH
+echo $ANDROID_SDK_ROOT
+
+gradle -v
 
 echo "prepare android"
 
 cordova prepare android --stacktrace
-
+cordova requirements
 echo "build android"
 
-cordova build android --debug
+
+gradle -v
+
+cordova build android --scan
 #cordova run android
 
 #cordova prepare ios
